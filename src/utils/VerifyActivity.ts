@@ -8,8 +8,9 @@ interface IuseActivityParams {
 
 const useIsVerified = ({ activity, role, activities }: IuseActivityParams) => {
   //FILL HERE 3.7
-  // const indexOfActivity = 
-  return true
+  const indexOfActivity = activities.findIndex(a => a == activity)
+  const indexOfRole = roles.findIndex(r => r == role)
+  return indexOfRole >= indexOfActivity
 };
 
 export default useIsVerified;

@@ -9,15 +9,15 @@ const router = createBrowserRouter([
  //FILL HERE
  {
    path: "/",
-   element: <PrivateRoute component={<Layout/>}/>,
+   element: <Layout/>,
    children: [
      {
-      path: "/floor/forbidden",
+      path: "/forbidden",
       element: <Forbidden/>
      },
      {
       path: "/floor/:index",
-      element: <Floor/>
+      element: <PrivateRoute component={<Floor/>}/>
      },
      {
       path: '/',

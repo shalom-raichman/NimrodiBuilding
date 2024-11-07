@@ -14,6 +14,9 @@ const Reception: React.FC = () => {
   const { getFloorByIndex } = useBuildingData()
   const dispatch = useDispatch()
 
+  console.log(floorAccess)
+  console.log(currentRole)
+
   const handleChangeAccess = (index: number) => {
     dispatch(changeAccess(index))
   }
