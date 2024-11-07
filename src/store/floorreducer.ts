@@ -2,16 +2,20 @@
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-export type  FloorState = [boolean, boolean, boolean, boolean, boolean]
+export interface  FloorState {
+  floorAccess: AccessType
+  }
 
-const initialState: FloorState = [false, false, false, false, false]
+type AccessType = [boolean, boolean, boolean, boolean, boolean] 
+
+const initialState: FloorState = { floorAccess: [false, false, false, false, false] }
 
 export const floorReducer = createSlice({
   name: 'floorAccess',
   initialState,
   reducers: {
     changeAccess : (state: FloorState, action: PayloadAction<number>) => {
-      state[action.payload] = !state[action.payload]
+      state.floorAccess[action.payload] = !state.floorAccess[action.payload]
     },
   },
 })

@@ -8,14 +8,15 @@ export interface RoleState {
 
 type RoleType = "Unknown Personnel" | "Guest" | "Student" | "Developer" | "Executive Personnel"
 
-const initialState: RoleState = {role: roles[0] as RoleType}
+const initialState: RoleType = roles[0] as RoleType
 
 export const RoleReducer = createSlice({
   name: 'roleAccess',
   initialState,
   reducers: {
-    setRole : (state: RoleState, action: PayloadAction<number>) => {
-      state.role = roles[action.payload] as RoleType
+    setRole : (state: RoleType, action: PayloadAction<number>) => {
+      state = roles[action.payload] as RoleType
+      return state
     },
   },
 })

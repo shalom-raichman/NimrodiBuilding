@@ -27,7 +27,6 @@ const Layout: React.FC = () => {
           ))}
         </div>
       </nav>
-
       <Outlet />
 
       <footer className="layout-footer">

@@ -6,8 +6,12 @@ interface IPrivateRoute{
     component: ReactNode,
 }
 
-const PrivateRoute = ({ component}:IPrivateRoute) => {
+const PrivateRoute = ({ component }:IPrivateRoute) => {
     //FILL HERE 3.6
+
+    const na = useNavigate()
+    // na('/*')
+    return component
 };
 
 export default PrivateRoute

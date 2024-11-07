@@ -6,6 +6,7 @@ import './Floor.css';
 
 const Floor: React.FC = () => {
   const { index } = useParams<{ index: string }>();
+  console.log(index)
   const floorIndex = parseInt(index || "0");
   const { getFloorByIndex, getListOfActivities } = useBuildingData();
   const navigate = useNavigate();
